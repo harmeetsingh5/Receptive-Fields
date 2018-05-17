@@ -1,0 +1,17 @@
+import cv2
+import PIL.Image
+from PIL import Image
+
+vidcap = cv2.VideoCapture('bw_nature.mp4')
+success,image = vidcap.read()
+count = 1
+success = True
+while success:
+  cv2.imwrite("natural_color/%d.tiff" % count, image)    
+  img = Image.open("natural_color/%d.tiff" % count)
+  img = img.resize((540,240))
+  img.save("natural_color/%d.tiff" % count, "TIFF", optimize=True)
+  success, image = vidcap.read()
+  count += 1
+  if(count > 12):
+      break
