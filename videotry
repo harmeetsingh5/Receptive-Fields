@@ -9,7 +9,6 @@ cap = cv2.VideoCapture('bw_nature.avi')
 frameCount = int(6)
 frameWidth = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frameHeight = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-
 buf = np.empty((frameCount, frameHeight, frameWidth, 3), np.dtype('uint8'))
 
 fc = 0
@@ -21,7 +20,5 @@ while (fc < 6  and ret):
 
 cap.release()
 
-cv2.namedWindow('frame 10')
-cv2.imshow('frame 10', buf[5])
-
+print(buf)
 print("done")
