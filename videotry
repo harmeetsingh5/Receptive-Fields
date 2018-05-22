@@ -24,4 +24,4 @@ cap.release()
 cv2.namedWindow('frame 10')
 cv2.imshow('frame 10', buf[5])
 
-cv2.waitKey(0)
+print("done")
